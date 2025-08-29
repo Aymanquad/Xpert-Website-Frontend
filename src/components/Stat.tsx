@@ -1,8 +1,18 @@
 export default function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="text-center">
-      <div className="text-3xl md:text-4xl font-semibold">{value}</div>
-      <div className="mt-1 text-xs uppercase tracking-wider text-zinc-400">{label}</div>
+    <div className="text-center group">
+      <div className="relative">
+        <div className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-white to-violet-400 bg-clip-text text-transparent">
+          {value}
+        </div>
+        {/* Glow effect */}
+        <div className="absolute inset-0 text-4xl md:text-6xl font-bold text-violet-500/20 blur-sm">
+          {value}
+        </div>
+      </div>
+      <div className="mt-4 text-sm uppercase tracking-wider text-zinc-400 font-medium">
+        {label}
+      </div>
     </div>
   )
 }
