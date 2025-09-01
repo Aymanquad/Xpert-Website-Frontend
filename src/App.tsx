@@ -6,7 +6,6 @@ import Services from './sections/Services'
 import Projects from './sections/Projects'
 import Stats from './sections/Stats'
 import About from './sections/About'
-import Awards from './sections/Awards'
 import Team from './sections/Team'
 import Process from './sections/Process'
 import Testimonials from './sections/Testimonials'
@@ -26,7 +25,6 @@ export default function App() {
         <Projects />
         <Stats />
         <About />
-        <Awards />
         <Team />
         <Process />
         <Testimonials />

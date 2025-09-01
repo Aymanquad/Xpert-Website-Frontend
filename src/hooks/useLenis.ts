@@ -5,8 +5,11 @@ export function useLenis(enabled = true) {
   useEffect(() => {
     if (!enabled) return
     const lenis = new Lenis({
-      smoothWheel: true,
+      smoothWheel: false, // Disabled to eliminate dragging
       lerp: 0.1,
+      wheelMultiplier: 1, // Normal wheel sensitivity
+      touchMultiplier: 1, // Normal touch scrolling
+      duration: 1,
     })
 
     function raf(time: number) {

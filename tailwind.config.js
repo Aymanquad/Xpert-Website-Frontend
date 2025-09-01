@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Space Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },
