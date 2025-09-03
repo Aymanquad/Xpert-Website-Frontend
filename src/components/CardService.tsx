@@ -43,7 +43,7 @@ export default function CardService({
 
   return (
     <motion.div 
-      className="group relative border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-all duration-300 hover:bg-white/5 backdrop-blur-sm cursor-pointer"
+      className="group relative border border-white/10 rounded-2xl p-8 hover:border-accent/30 transition-all duration-300 hover:bg-white/5 backdrop-blur-sm cursor-pointer"
       variants={cardVariants}
       initial="initial"
       whileInView="animate"
@@ -54,7 +54,7 @@ export default function CardService({
     >
       {/* Enhanced hover glow effect */}
       <motion.div 
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-violet-500/0 to-violet-500/0 group-hover:from-violet-500/5 group-hover:to-violet-500/10 transition-all duration-300"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-accentOrange/10 transition-all duration-300"
         animate={{
           opacity: isHovered ? 1 : 0,
           scale: isHovered ? 1.05 : 1
@@ -73,7 +73,7 @@ export default function CardService({
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-violet-400/40 rounded-full"
+              className="absolute w-1 h-1 bg-accent/40 rounded-full"
               style={{
                 left: `${20 + i * 30}%`,
                 top: `${30 + i * 20}%`
@@ -96,7 +96,7 @@ export default function CardService({
       <div className="relative z-10">
         {icon && (
           <motion.div 
-            className="mb-6 p-3 w-fit rounded-xl bg-violet-500/10 border border-violet-500/20"
+            className="mb-6 p-3 w-fit rounded-xl bg-accent/10 border border-accent/20"
             variants={iconVariants}
             whileHover="hover"
           >
@@ -105,9 +105,9 @@ export default function CardService({
         )}
         
         <motion.h3 
-          className="text-xl font-semibold mb-3 group-hover:text-violet-400 transition-colors"
+          className="text-xl font-semibold mb-3 group-hover:text-accent transition-colors"
           animate={{
-            color: isHovered ? "#a855f7" : "#ffffff"
+            color: isHovered ? "#2563EB" : "#ffffff"
           }}
           transition={{ duration: 0.3 }}
         >
@@ -132,12 +132,12 @@ export default function CardService({
           whileHover="hover"
         >
           <motion.div 
-            className="w-8 h-8 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <motion.svg 
-              className="w-4 h-4 text-violet-400" 
+              className="w-4 h-4 text-accent" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"

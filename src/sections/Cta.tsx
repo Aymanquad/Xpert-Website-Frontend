@@ -37,11 +37,11 @@ const floatingVariants = {
 
 export default function Cta() {
   return (
-    <Section id="contact" className="relative overflow-hidden bg-gradient-to-b from-[#111111] to-[#0B0B0B]">
+    <Section id="contact" className="relative overflow-hidden bg-gradient-to-b from-surface to-bg">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3]
@@ -49,7 +49,7 @@ export default function Cta() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accentOrange/5 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.6, 0.3, 0.6]
@@ -71,7 +71,7 @@ export default function Cta() {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-violet-400/30 rounded-full"
+            className="absolute w-2 h-2 bg-accent/30 rounded-full"
             style={{
               left: `${10 + i * 10}%`,
               top: `${20 + i * 8}%`
@@ -98,7 +98,7 @@ export default function Cta() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.div 
-            className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-400 mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm text-accent mb-6"
             variants={itemVariants}
             whileHover={{ 
               scale: 1.05,
@@ -128,7 +128,7 @@ export default function Cta() {
               Let's discuss your
             </motion.span>
             <motion.span 
-              className="block text-violet-400"
+              className="block text-accent"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}

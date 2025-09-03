@@ -48,7 +48,7 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <Section id="projects" className="bg-gradient-to-b from-[#111111] to-[#0B0B0B]">
+    <Section id="projects" className="bg-gradient-to-b from-surface to-bg">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
           Our Projects
@@ -60,9 +60,9 @@ export default function Projects() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {PROJECTS.map((project) => (
-          <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-violet-500/30 transition-all duration-300">
+          <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-accent/30 transition-all duration-300">
             {/* Project Image */}
-            <div className="aspect-video bg-gradient-to-br from-violet-500/20 to-blue-500/20 relative overflow-hidden">
+            <div className="aspect-video bg-gradient-to-br from-accent/20 to-accentOrange/20 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               
               {/* Hover Overlay */}
@@ -81,13 +81,13 @@ export default function Projects() {
             {/* Project Info */}
             <div className="p-6">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-medium text-violet-400 uppercase tracking-wider">
+                <span className="text-xs font-medium text-accent uppercase tracking-wider">
                   {project.category}
                 </span>
                 <span className="text-xs text-zinc-500">{project.year}</span>
               </div>
               
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-violet-400 transition-colors">
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
               

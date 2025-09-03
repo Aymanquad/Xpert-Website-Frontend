@@ -12,17 +12,21 @@ export default function Hero() {
   const circleRef = useParallax<HTMLDivElement>(0.1)
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-[#0B0B0B]">
+    <section id="home" className="relative h-screen flex items-center justify-center text-center overflow-hidden bg-bg">
       {/* Floating Particles Background */}
       <FloatingParticles />
       
-      {/* Floating Xpert Logo Background with Parallax */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
+      {/* Floating Xpert Logo Background with dual overlays (no glow) */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Base darker overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        {/* Secondary lighter overlay for subtle depth */}
+        <div className="absolute inset-0 bg-black/20" />
         <img 
           ref={logoParallaxRef}
           src={XpertLogo} 
           alt="Xpert Logo Background" 
-          className="w-[800px] h-[800px] object-contain select-none pointer-events-none animate-float"
+          className="w-[800px] h-[800px] object-contain select-none pointer-events-none animate-float opacity-15"
         />
       </div>
       
@@ -67,7 +71,7 @@ export default function Hero() {
           />
           <AnimatedText 
             text="• MOBILE •" 
-            className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-heading text-violet-400"
+            className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-heading text-accent"
             delay={0.6}
           />
           <AnimatedText 

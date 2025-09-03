@@ -58,7 +58,7 @@ const headerVariants = {
 
 export default function Services() {
   return (
-    <Section id="services" className="bg-gradient-to-b from-[#0B0B0B] to-[#111111] relative overflow-hidden">
+    <Section id="services" className="bg-gradient-to-b from-bg to-surface relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

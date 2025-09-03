@@ -57,11 +57,11 @@ const imageVariants = {
 
 export default function About() {
   return (
-    <Section id="about" className="bg-gradient-to-b from-[#0B0B0B] to-[#111111] relative overflow-hidden">
+    <Section id="about" className="bg-gradient-to-b from-bg to-surface relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 right-20 w-40 h-40 bg-violet-500/5 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.4, 1],
             opacity: [0.2, 0.5, 0.2]
@@ -69,7 +69,7 @@ export default function About() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 left-20 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"
+          className="absolute bottom-20 left-20 w-32 h-32 bg-accentOrange/5 rounded-full blur-3xl"
           animate={{
             scale: [1.4, 1, 1.4],
             opacity: [0.5, 0.2, 0.5]
@@ -131,7 +131,7 @@ export default function About() {
                   }}
                 >
                   <motion.div 
-                    className="p-2 rounded-lg bg-violet-500/10 border border-violet-500/20"
+                    className="p-2 rounded-lg bg-accent/10 border border-accent/20"
                     whileHover={{ 
                       scale: 1.1,
                       rotate: 5,
@@ -143,7 +143,7 @@ export default function About() {
                   <div>
                     <motion.h3 
                       className="font-semibold text-white mb-1"
-                      whileHover={{ color: "#a855f7" }}
+                      whileHover={{ color: "#2563EB" }}
                       transition={{ duration: 0.3 }}
                     >
                       {feature.title}

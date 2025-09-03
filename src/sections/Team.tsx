@@ -194,11 +194,11 @@ export default function Team() {
   }, [stopAutoPlay])
 
   return (
-    <Section id="team" className="bg-gradient-to-b from-[#111111] to-[#0B0B0B] relative overflow-hidden">
+    <Section id="team" className="bg-gradient-to-b from-surface to-bg relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-48 h-48 bg-violet-500/5 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.5, 0.2]
@@ -206,7 +206,7 @@ export default function Team() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-56 h-56 bg-blue-500/5 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-56 h-56 bg-accentOrange/5 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.5, 0.2, 0.5]

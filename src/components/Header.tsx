@@ -49,7 +49,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 items-center justify-between px-6 md:px-8 max-w-[1200px]">
         <a 
           href="#home" 
-          className="font-bold text-xl tracking-wider uppercase hover:text-violet-400 transition-colors"
+          className="font-bold text-xl tracking-wider uppercase hover:text-accent transition-colors"
         >
           Xpert Games
         </a>
@@ -62,7 +62,7 @@ export default function Header() {
               href={item.href} 
               className={`transition-colors hover:text-white ${
                 activeSection === item.href.slice(1) 
-                  ? 'text-violet-400' 
+                  ? 'text-accent' 
                   : 'text-zinc-300'
               }`}
             >
@@ -105,7 +105,7 @@ export default function Header() {
                 href={item.href} 
                 className={`block py-2 transition-colors hover:text-white ${
                   activeSection === item.href.slice(1) 
-                    ? 'text-violet-400' 
+                    ? 'text-accent' 
                     : 'text-zinc-300'
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}

@@ -19,7 +19,7 @@ export default function AnimatedButton({
   const baseClasses = "relative px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 overflow-hidden"
   
   const variantClasses = {
-    primary: "bg-violet-600 hover:bg-violet-700 text-white shadow-lg hover:shadow-violet-500/25",
+    primary: "bg-accent hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25",
     secondary: "bg-transparent border-2 border-white/20 hover:border-white/40 text-white hover:bg-white/5"
   }
 
@@ -64,7 +64,7 @@ export default function AnimatedButton({
       {/* Glow effect for primary button */}
       {variant === 'primary' && (
         <motion.div
-          className="absolute inset-0 bg-violet-400/20 rounded-full blur-xl"
+          className="absolute inset-0 bg-accent/20 rounded-full blur-xl"
           animate={{
             opacity: isHovered ? 1 : 0,
             scale: isHovered ? 1.2 : 1

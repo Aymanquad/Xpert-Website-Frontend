@@ -17,7 +17,7 @@ export default function App() {
   useLenis()
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-white">
+    <div className="min-h-screen bg-bg text-white">
       <Header />
       <main className="pt-16">
         <Hero />

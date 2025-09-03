@@ -63,11 +63,11 @@ export default function Stats() {
   }, [isInView])
 
   return (
-    <Section className="bg-gradient-to-b from-[#111111] to-[#0B0B0B] relative overflow-hidden">
+    <Section className="bg-gradient-to-b from-surface to-bg relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-1/2 left-1/4 w-64 h-64 bg-violet-500/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2]
@@ -75,7 +75,7 @@ export default function Stats() {
           transition={{ duration: 6, repeat: Infinity }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/4 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl"
+          className="absolute top-1/2 right-1/4 w-48 h-48 bg-accentOrange/5 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.4, 0.2, 0.4]
