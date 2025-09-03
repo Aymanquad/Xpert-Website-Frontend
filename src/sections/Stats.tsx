@@ -63,7 +63,7 @@ export default function Stats() {
   }, [isInView])
 
   return (
-    <Section className="bg-gradient-to-b from-surface to-bg relative overflow-hidden">
+    <Section className="relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

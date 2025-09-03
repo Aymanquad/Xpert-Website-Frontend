@@ -27,7 +27,7 @@ const TESTIMONIALS = [
 
 export default function Testimonials() {
   return (
-    <Section id="testimonials" className="bg-gradient-to-b from-bg to-surface">
+    <Section id="testimonials" className="">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
           Client Testimonials
@@ -46,7 +46,7 @@ export default function Testimonials() {
             </div>
             
             {/* Card */}
-            <div className="relative border border-white/10 rounded-2xl p-8 pt-12 hover:border-accent/30 transition-all duration-300 hover:bg-white/5 backdrop-blur-sm">
+            <div className="relative rounded-2xl p-8 pt-12 transition-all duration-300 hover:-translate-y-1">
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (

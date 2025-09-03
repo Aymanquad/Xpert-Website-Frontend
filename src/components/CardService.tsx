@@ -43,7 +43,7 @@ export default function CardService({
 
   return (
     <motion.div 
-      className="group relative border border-white/10 rounded-2xl p-8 hover:border-accent/30 transition-all duration-300 hover:bg-white/5 backdrop-blur-sm cursor-pointer"
+      className="group relative rounded-2xl p-8 transition-all duration-300 cursor-pointer hover:-translate-y-1"
       variants={cardVariants}
       initial="initial"
       whileInView="animate"
@@ -54,7 +54,7 @@ export default function CardService({
     >
       {/* Enhanced hover glow effect */}
       <motion.div 
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/0 to-accent/0 group-hover:from-accent/5 group-hover:to-accentOrange/10 transition-all duration-300"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent to-transparent group-hover:from-accent/5 group-hover:to-accentOrange/10 transition-all duration-300"
         animate={{
           opacity: isHovered ? 1 : 0,
           scale: isHovered ? 1.05 : 1

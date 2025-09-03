@@ -30,70 +30,52 @@ const PROJECTS = [
     description: 'Fantasy strategy game with deep lore',
     image: '/api/placeholder/400/300'
   },
-  { 
-    title: 'Cyber Defense', 
-    category: 'Tower Defense', 
-    year: '2024',
-    description: 'Futuristic tower defense with cyberpunk theme',
-    image: '/api/placeholder/400/300'
-  },
-  { 
-    title: 'Ocean Explorer', 
-    category: 'Adventure', 
-    year: '2023',
-    description: 'Underwater exploration with realistic physics',
-    image: '/api/placeholder/400/300'
-  },
 ]
 
 export default function Projects() {
   return (
-    <Section id="projects" className="bg-gradient-to-b from-surface to-bg">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          Our Projects
-        </h2>
-        <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-          Showcasing our latest game development achievements
-        </p>
+    <Section id="projects" className="">
+      <div className="flex items-end justify-between mb-8">
+        <div>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Our Projects</h2>
+          <p className="text-xl text-zinc-400">Showcasing our latest game development achievements</p>
+        </div>
+        <div className="hidden md:flex gap-2 text-sm text-zinc-400">
+          <span>Scroll</span>
+          <span>→</span>
+        </div>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PROJECTS.map((project) => (
-          <div key={project.title} className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-accent/30 transition-all duration-300">
-            {/* Project Image */}
-            <div className="aspect-video bg-gradient-to-br from-accent/20 to-accentOrange/20 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="flex gap-4">
-                  <button className="p-3 rounded-full bg-violet-600 hover:bg-violet-500 transition-colors">
-                    <Play className="w-5 h-5 text-white" />
-                  </button>
-                  <button className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-                    <ExternalLink className="w-5 h-5 text-white" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            
-            {/* Project Info */}
-            <div className="p-6">
+
+      {/* Alternating image/text project cards */}
+      <div className="space-y-10">
+        {PROJECTS.map((project, index) => (
+          <div key={project.title} className={`grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch ${index % 2 === 1 ? 'md:[&>div:first-child]:order-2 md:[&>div:last-child]:order-1' : ''}`}>
+            {/* Text block */}
+            <div className="p-6 md:p-8 rounded-2xl bg-white/5">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-medium text-accent uppercase tracking-wider">
-                  {project.category}
-                </span>
+                <span className="text-xs font-medium text-accent uppercase tracking-wider">{project.category}</span>
                 <span className="text-xs text-zinc-500">{project.year}</span>
               </div>
-              
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
-                {project.title}
-              </h3>
-              
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                {project.description}
-              </p>
+              <h3 className="text-2xl md:text-3xl font-semibold mb-3">{project.title}</h3>
+              <p className="text-zinc-400 mb-4">{project.description}</p>
+              <div className="flex gap-3">
+                <button className="px-4 py-2 rounded-full bg-accent text-white text-sm">View Case Study</button>
+                <button className="px-4 py-2 rounded-full bg-white/10 text-white text-sm">Live Demo</button>
+              </div>
+            </div>
+
+            {/* Visual block */}
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-accent/15 to-accentOrange/15">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-4 right-4 flex gap-2">
+                <button className="p-3 rounded-full bg-accent hover:bg-blue-500 transition-colors">
+                  <Play className="w-5 h-5 text-white" />
+                </button>
+                <button className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                  <ExternalLink className="w-5 h-5 text-white" />
+                </button>
+              </div>
+              <div className="aspect-video" />
             </div>
           </div>
         ))}

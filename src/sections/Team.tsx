@@ -194,7 +194,7 @@ export default function Team() {
   }, [stopAutoPlay])
 
   return (
-    <Section id="team" className="bg-gradient-to-b from-surface to-bg relative overflow-hidden">
+    <Section id="team" className="relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -255,7 +255,7 @@ export default function Team() {
                   viewport={{ once: true, margin: "-50px" }}
                 >
                   <motion.div 
-                    className="group/card relative aspect-[4/5] rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-xl hover:border-violet-500/30 transition-all duration-500 hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 overflow-hidden"
+                    className="group/card relative aspect-[4/5] rounded-2xl bg-gradient-to-br from-white/5 to-white/10 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
                     whileHover={{ 
                       y: -10,
                       scale: 1.02,

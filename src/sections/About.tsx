@@ -57,7 +57,7 @@ const imageVariants = {
 
 export default function About() {
   return (
-    <Section id="about" className="bg-gradient-to-b from-bg to-surface relative overflow-hidden">
+    <Section id="about" className="relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

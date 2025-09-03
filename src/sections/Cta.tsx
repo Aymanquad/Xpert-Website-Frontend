@@ -37,7 +37,7 @@ const floatingVariants = {
 
 export default function Cta() {
   return (
-    <Section id="contact" className="relative overflow-hidden bg-gradient-to-b from-surface to-bg">
+    <Section id="contact" className="relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         <motion.div 
