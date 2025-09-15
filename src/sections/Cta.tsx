@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Section from '../components/Section'
 import AnimatedButton from '../components/AnimatedButton'
 import { ArrowRight, Sparkles } from 'lucide-react'
+import Orb from '../components/Orb'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -12,7 +13,7 @@ const containerVariants = {
       delayChildren: 0.1
     }
   }
-}
+} as any
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -21,19 +22,9 @@ const itemVariants = {
     y: 0,
     transition: { type: "spring", stiffness: 300, damping: 20 }
   }
-}
+} as any
 
-const floatingVariants = {
-  animate: {
-    y: [0, -20, 0],
-    rotate: [0, 5, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-}
+//
 
 export default function Cta() {
   return (
@@ -56,14 +47,7 @@ export default function Cta() {
           }}
           transition={{ duration: 10, repeat: Infinity, delay: 2 }}
         />
-        <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-full"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity }}
-        />
+        <Orb />
       </div>
 
       {/* Floating particles */}
@@ -154,7 +138,19 @@ export default function Cta() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <AnimatedButton variant="primary" className="px-8 py-4 text-lg">
+              <AnimatedButton 
+                variant="primary" 
+                className="px-8 py-4 text-lg"
+                onClick={() => {
+                  const to = encodeURIComponent('xpertgamesco@gmail.com')
+                  const subject = encodeURIComponent('Project Inquiry from Website')
+                  const body = encodeURIComponent(
+                    `Hi Xpert Games Co,\n\nMy project idea: \n- Brief overview: \n- Target platforms: (iOS/Android/Web/Desktop)\n- Tech preferences (if any): \n- Budget & timeline: \n\nAdditional notes/suggestions: \n\nBest,\n[Your Name]`
+                  )
+                  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`
+                  window.open(url, '_blank', 'noopener,noreferrer')
+                }}
+              >
                 Start Your Project
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
@@ -162,14 +158,6 @@ export default function Cta() {
                 >
                   <ArrowRight className="w-5 h-5" />
                 </motion.div>
-              </AnimatedButton>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <AnimatedButton variant="secondary" className="px-8 py-4 text-lg">
-                Schedule a Call
               </AnimatedButton>
             </motion.div>
           </motion.div>

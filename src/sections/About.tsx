@@ -34,7 +34,7 @@ const containerVariants = {
       delayChildren: 0.2
     }
   }
-}
+} as any
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -43,7 +43,7 @@ const itemVariants = {
     y: 0,
     transition: { type: "spring", stiffness: 300, damping: 20 }
   }
-}
+} as any
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8, rotate: -5 },
@@ -53,7 +53,7 @@ const imageVariants = {
     rotate: 0,
     transition: { type: "spring", stiffness: 300, damping: 20 }
   }
-}
+} as any
 
 export default function About() {
   return (
@@ -163,24 +163,28 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {/* Main Image Grid */}
+            {/* Interactive Tiles */}
             <div className="grid grid-cols-2 gap-4">
-              {[
-                'from-violet-500/20 to-purple-500/20',
-                'from-blue-500/20 to-cyan-500/20',
-                'from-green-500/20 to-emerald-500/20',
-                'from-orange-500/20 to-red-500/20'
-              ].map((gradient, index) => (
+              {[0,1,2,3].map((i) => (
                 <motion.div
-                  key={index}
-                  className={`aspect-square rounded-2xl bg-gradient-to-br ${gradient} border border-white/10`}
+                  key={i}
+                  className="group relative aspect-square rounded-2xl border border-white/10 overflow-hidden"
                   variants={imageVariants}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotate: 2,
-                    transition: { type: "spring", stiffness: 400, damping: 10 }
-                  }}
-                />
+                  whileHover={{ scale: 1.03 }}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${[
+                    'from-violet-500/20 to-purple-500/5',
+                    'from-blue-500/20 to-cyan-500/5',
+                    'from-green-500/20 to-emerald-500/5',
+                    'from-orange-500/20 to-red-500/5'
+                  ][i]}`} />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute -inset-1 bg-[conic-gradient(from_90deg_at_50%_50%,rgba(139,92,246,0.0),rgba(139,92,246,0.35),rgba(139,92,246,0.0))] blur-2xl" />
+                  </div>
+                  <div className="relative z-10 h-full w-full flex items-end">
+                    <div className="w-full h-1 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-y-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                </motion.div>
               ))}
             </div>
             
