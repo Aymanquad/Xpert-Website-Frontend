@@ -6,7 +6,6 @@ import { useInViewOnce } from '../hooks/useInViewOnce'
 
 const STATS = [
   { label: 'Happy Clients', value: 18, suffix: '+', color: 'violet' },
-  { label: 'Revenue Generated', value: 50, suffix: 'M', prefix: '$', color: 'blue' },
   { label: 'Projects Completed', value: 90, suffix: '%+', color: 'green' },
 ]
 
@@ -33,7 +32,7 @@ const statVariants = {
 
 export default function Stats() {
   const { ref, isInView } = useInViewOnce()
-  const [counts, setCounts] = useState([0, 0, 0])
+  const [counts, setCounts] = useState<number[]>(Array(STATS.length).fill(0))
 
   useEffect(() => {
     if (!isInView) return
@@ -87,7 +86,7 @@ export default function Stats() {
       <div className="relative z-10">
         <motion.div 
           ref={ref} 
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}

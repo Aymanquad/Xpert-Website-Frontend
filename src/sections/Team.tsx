@@ -4,6 +4,7 @@ import { Linkedin } from 'lucide-react'
 import dennisImg from '../assets/dennis-img.png'
 import hishamImg from '../assets/hisham-img.jpg'
 import aryanImg from '../assets/aryan-img.jpg'
+import aryan2Img from '../assets/aryan2-img.jpg'
 import aymanImg from '../assets/ayman-img2.jpg'
 import shafaatImg from '../assets/shafaat-img.jpg'
 import raffeImg from '../assets/raffe-img.jpg'
@@ -31,6 +32,13 @@ const TEAM_MEMBERS = [
     linkedin: 'https://www.linkedin.com/in/aryan-singh-967b97352?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
   },
   {
+    name: 'Aryan Adrian Lawrence',
+    role: 'Marketing',
+    line: 'Spreading the word about our games.',
+    image: aryan2Img,
+    linkedin: ''
+  },
+  {
     name: 'Ayman',
     role: 'Lead App Developer',
     line: 'Building delightful mobile experiences.',
@@ -45,7 +53,7 @@ const TEAM_MEMBERS = [
     linkedin: 'https://www.linkedin.com/in/shafaat-hussain-562249245/'
   },
   {
-    name: 'Raafae',
+    name: 'Rafae',
     role: 'Full stack Ai Developer',
     line: 'AI-first systems end to end.',
     image: raffeImg,
@@ -116,7 +124,7 @@ export default function Team() {
         
         {/* Grid of team members */}
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-8 gap-6 lg:[&>*]:col-span-2 lg:[&>*:nth-child(1)]:col-start-1 lg:[&>*:nth-child(2)]:col-start-3 lg:[&>*:nth-child(3)]:col-start-5 lg:[&>*:nth-child(4)]:col-start-7 lg:[&>*:nth-child(5)]:col-start-2 lg:[&>*:nth-child(6)]:col-start-4 lg:[&>*:nth-child(7)]:col-start-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -129,7 +137,7 @@ export default function Team() {
               variants={cardVariants}
               whileHover={{ y: -6 }}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
                 <motion.img 
                   src={member.image}
                   alt={member.name}
