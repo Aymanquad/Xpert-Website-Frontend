@@ -80,19 +80,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         }`}
       >
         {/* Text block */}
-        <div className="p-6 md:p-8 flex flex-col justify-center">
+        <div className="p-6 md:p-7 flex flex-col justify-center">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs font-medium text-accent uppercase tracking-wider">{project.category}</span>
             <span className="text-xs text-zinc-500">{project.year}</span>
           </div>
-          <h3 className="text-2xl md:text-3xl font-semibold mb-3">{project.title}</h3>
-          <p className="text-zinc-400 mb-6">{project.description}</p>
+          <h3 className="text-xl md:text-2xl font-semibold mb-3">{project.title}</h3>
+          <p className="text-zinc-400 mb-5">{project.description}</p>
           <div className="flex gap-3">
             <a
               href={(project as any).website || '#'}
               target="_blank"
               rel="noreferrer noopener"
-              className="px-4 py-2 rounded-full bg-accent text-white text-sm"
+              className="px-3 py-1.5 rounded-full bg-accent text-white text-xs md:text-sm"
             >
               View Details
             </a>
@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               href={(project as any).playStore || (project as any).website || '#'}
               target="_blank"
               rel="noreferrer noopener"
-              className="px-4 py-2 rounded-full bg-white/10 text-white text-sm"
+              className="px-3 py-1.5 rounded-full bg-white/10 text-white text-xs md:text-sm"
             >
               Visit
             </a>
@@ -148,7 +148,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div className="absolute bottom-4 right-4">
             <a
               href={(project as any).playStore || (project as any).website || '#'}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 backdrop-blur text-white text-xs"
+              className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-white/10 backdrop-blur text-white text-[0.8rem]"
             >
               <ExternalLink className="w-4 h-4" />
               Visit
@@ -165,8 +165,8 @@ export default function Projects() {
     <Section id="projects" className="">
       <div className="flex items-end justify-between mb-8">
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">Our Projects</h2>
-          <p className="text-xl text-zinc-400">Hand-picked product builds we’re proud of</p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Projects</h2>
+          <p className="text-lg text-zinc-400">Hand-picked product builds we’re proud of</p>
         </div>
         <div className="hidden md:flex gap-2 text-sm text-zinc-400">
           <span>Scroll</span>

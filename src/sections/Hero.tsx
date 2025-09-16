@@ -46,7 +46,7 @@ export default function Hero() {
         />
       </div>
       
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
+      <div className="relative z-10 max-w-3xl mx-auto px-8 md:px-10">
         {/* Location Badge with Animation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,17 +66,17 @@ export default function Hero() {
         <div className="mt-8">
           <AnimatedText 
             text="NEXT-GEN" 
-            className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-heading text-white"
+            className="block text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading text-white"
             delay={0.4}
           />
           <AnimatedText 
             text="• MOBILE •" 
-            className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-heading text-accent"
+            className="block text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading text-accent"
             delay={0.6}
           />
           <AnimatedText 
             text="GAMING" 
-            className="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight font-heading text-white"
+            className="block text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight font-heading text-white"
             delay={0.8}
           />
         </div>
@@ -86,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-6 text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-sans"
+          className="mt-6 text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-sans"
         >
           Fast, fun, and addictive hyper-casual games that are easy to pick up, hard to put down, and optimized for virality.
         </motion.p>
